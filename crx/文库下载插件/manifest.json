@@ -1,0 +1,35 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 2,
+  "name": "百度文库免费下载",
+  "description": "百度文档免下载券免费下载，可以导出PDF文字和图片，能屏蔽文档中的广告，支持Word、PPT、PDF文档",
+  "version": "1.0.16",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "page_action": {
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "./js/content_script.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "./js/background.js"
+    ]
+  },
+  "permissions": [
+    "storage",
+    "*://*/*"
+  ]
+}
